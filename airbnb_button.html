@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <!-- 제이쿼리 설치  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script>
+	$(document).ready(function(){
+	
+	});
+
+  </script>
+  <style>
+	* {margin:0; padding:0; list-style:none;}
+	#wrap { width:200px; height:50px; text-align:center; position:relative; line-height:50px; margin:auto; perspective:300px; cursor:pointer;}
+	#wrap div {width:200px; height:50px; border:2px solid #333; box-sizing:border-box; position:absolute; transition:0.5s; }
+	#wrap div:nth-child(1) { background-color:#333; color:#fff; transform:rotateX(90deg); transform-origin:50% 50% -25px; }
+	#wrap:hover div:nth-child(1)  { transform:rotateX(0deg);  }
+	#wrap div:nth-child(2) {background-color:#FFF; color:#333; transform:rotateX(0deg); transform-origin:50% 50% -25px;}
+	#wrap:hover div:nth-child(2) {transform:rotateX(-90deg); background-color:#333;}
+  </style> 
+ </head>
+ <body>
+	<div id="wrap">
+		<div>Button</div>
+		<div>Hover</div>
+	</div>
+ </body>
+</html>
