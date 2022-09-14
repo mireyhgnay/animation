@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+	$(document).ready(function(){
+		var num1 = 0;
+
+		setInterval(function(){
+			num1=num1+2; 
+			//num값이 오른쪽에서 다 빠지면 다시 외쪽에서 시작하게한다.
+			if (num1>1900)
+			{
+				num1=-300;
+			}
+			$('#cloud1').css('left',num1);
+		},1);
+		
+		var num2=0;
+		setInterval(function(){
+			num2=num2+2
+			if (num2>2500)
+			{
+				num2=-300;
+			}
+			$('#cloud2').css('left',num2);
+		},8);
+
+		var num3=0;
+		setInterval(function(){
+			num3=num3+2
+			if (num3>2500)
+			{
+				num3=-300;
+			}
+			$('#cloud3').css('left',num3);
+		},5);
+
+	})
+  </script>
+  <style>
+	* {margin:0; padding:0; list-style:none;}
+	body, html {height:100%; overflow:hidden;}
+	body {background:linear-gradient(to bottom, #09ccf6, #134574);}
+	div {position:absolute;}
+	#cloud1 {top:50px; z-index:90;}
+	#cloud2 {top:250px; z-index:80;}
+	#cloud3 {top:450px; z-index:70;}
+  </style>
+ </head>
+ <body>
+	<div id="cloud1"><img src="cloud.png" alt="" /></div>
+	<div id="cloud2"><img src="cloud.png" alt="" width="200px"/></div>
+	<div id="cloud3"><img src="cloud.png" alt="" /></div>
+  
+ </body>
+</html>
