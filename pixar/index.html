@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>PIXAR</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+	$(document).ready(function(){
+		//dt를 클릭하면 배경색상이 변경되고 
+		//해당 dd가 표시되도록하기
+		$('dt').click(function(){
+			$('dt').css({'background-color':'gray','color':'#fff'}); //this보다 앞 순서에 와야함(초기화를 먼저 시켜줌)
+			$(this).css({'background-color':'green','color':'black'}); //this는 dt중 클릭한 것만!! 변하게 함
+			$('dd').slideUp();
+			$(this).siblings().slideDown(); //★★dt(this)와 dd는 부모와자식 관계가아니라 자식1,자식2 이므로 형제관계이다.
+		});
+		
+		//이미지 배경에 띄우기
+		$('#menu1 li img:eq(0)').click(function(){ //삽입된 이미지의 형태는 이미지 태그가 아닌 css background이기 때문에 결국 스크립트에서 css호출이 필요하다.
+			$('#bg').css({'background':'url("fd_1.jpg")'}); //따옴표안에 또 따옴표가 들어가야 하는경우에는 큰따옴표와 작은따옴표로 구분하기
+			$(this).fadeIn();
+		});
+		$('#menu1 li img:eq(1)').click(function(){
+			$('#bg').css({'background':'url("fd_2.jpg") center center no-repeat'});
+		});
+		$('#menu1 li img:eq(2)').click(function(){
+			$('#bg').css({'background':'url("fd_3.jpg") center center no-repeat'});
+		});
+		$('#menu1 li img:eq(3)').click(function(){
+			$('#bg').css({'background':'url("fd_4.jpg") center center no-repeat'});
+		});
+
+		$('#menu2 li img:eq(0)').click(function(){
+			$('#bg').css({'background':'url("io_1.jpg") center center no-repeat'});
+		});
+		$('#menu2 li img:eq(1)').click(function(){
+			$('#bg').css({'background':'url("io_2.jpg") center center no-repeat'});
+		});
+		$('#menu2 li img:eq(2)').click(function(){
+			$('#bg').css({'background':'url("io_3.jpg") center center no-repeat'});
+		});
+		$('#menu2 li img:eq(3)').click(function(){
+			$('#bg').css({'background':'url("io_4.jpg") center center no-repeat'});
+		});
+
+		$('#menu3 li img:eq(0)').click(function(){
+			$('#bg').css({'background':'url("mu_1.jpg") center center no-repeat'});
+		});
+		$('#menu3 li img:eq(1)').click(function(){
+			$('#bg').css({'background':'url("mu_2.jpg") center center no-repeat'});
+		});
+		$('#menu3 li img:eq(2)').click(function(){
+			$('#bg').css({'background':'url("mu_3.jpg") center center no-repeat'});
+		});
+		$('#menu3 li img:eq(3)').click(function(){
+			$('#bg').css({'background':'url("mu_4.jpg") center center no-repeat'});
+		});
+
+		$('#menu4 li img:eq(0)').click(function(){
+			$('#bg').css({'background':'url("ts3_1.jpg") center center no-repeat'});
+		});
+		$('#menu4 li img:eq(1)').click(function(){
+			$('#bg').css({'background':'url("ts3_2.jpg") center center no-repeat'});
+		});
+		$('#menu4 li img:eq(2)').click(function(){
+			$('#bg').css({'background':'url("ts3_3.jpg") center center no-repeat'});
+		});
+		$('#menu4 li img:eq(3)').click(function(){
+			$('#bg').css({'background':'url("ts3_4.jpg") center center no-repeat'});
+		});
+
+
+	
+	})
+  </script>
+  <style>
+	* {margin:0; padding:0; list-style:none;}
+	/*body가 아닌 대상은 기본적으로 높이에 대한 비율을 인지하지 못한다.
+	body와 html의 대상을 100%의 값으로 할당이 필요하다.*/
+	body, html {height:100%;}
+	#bg {width:100%; height:100%; background:url('bg.jpg') center center no-repeat; background-size:cover; position:absolute; z-index:-1;}
+	#title {width:320px; color:#FFF; font-size:27px; margin-left:25px;}
+	dl {width:350px;  background-color:rbg(0,0,0,0.8); padding:5px;}
+	dt {width:320px; height:40px; border-radius:5px; background-color:gray; margin-bottom:5px; line-height:40px; padding-left:30px; color:#fff; font-weight:900; cursor:pointer;}
+	dd {width:350px; height:275px; display:none;}
+	/*#menu1 dd {display:block;}*/
+	/*#menu1 dt {background-color:green; color:#fff;}*/
+	dd h2 {width:100%;}
+	dd p {color:#fff; margin-bottom:5px;}
+	dd p a {font-size:12px;}
+	dd ul li {width:81px; height:60px; float:left; margin:3px;}
+	dd img {width:100%; border-radius:5px; cursor:pointer;}
+  </style>
+ </head>
+ <body>
+	<div id="bg"></div>
+	<div id="title"><p>P I X A R</p></div>
+	<dl id="menu1">
+		<dt>FINDING DORY</dt> 
+		<dd>
+			<h2><img src="fd_main.jpg" alt="" /></h2>
+			<p><b>Finding Dory </b><br /><a>Check out the new trailer!</a></p>
+			<ul>
+				<li><img src="fd_1.jpg" alt="" /></li>
+				<li><img src="fd_1.jpg" alt="" /></li>
+				<li><img src="fd_1.jpg" alt="" /></li>
+				<li><img src="fd_1.jpg" alt="" /></li>
+			</ul>
+		</dd>
+	</dl>
+
+		<dl id="menu2">
+		<dt>INSIDE OUT</dt> 
+		<dd>
+			<h2><img src="io_main.jpg" alt="" /></h2>
+			<p><b>Inside Out</b><br /><a>Check out the new trailer!</a></p>
+			<ul>
+				<li><img src="io_2.jpg" alt="" /></li>
+				<li><img src="io_2.jpg" alt="" /></li>
+				<li><img src="io_2.jpg" alt="" /></li>
+				<li><img src="io_2.jpg" alt="" /></li>
+			</ul>
+		</dd>
+	</dl>
+
+		<dl id="menu3">
+		<dt>MONSTER UNIVERSITY</dt> 
+		<dd>
+			<h2><img src="mu_main.jpg" alt="" /></h2>
+			<p><b>Monsters University</b><br /><a>Check out the new trailer!</a></p>
+			<ul>
+				<li><img src="mu_2.jpg" alt="" /></li>
+				<li><img src="mu_2.jpg" alt="" /></li>
+				<li><img src="mu_2.jpg" alt="" /></li>
+				<li><img src="mu_2.jpg" alt="" /></li>
+			</ul>
+		</dd>
+	</dl>
+
+		<dl id="menu4">
+		<dt>TOY STORY 3</dt> 
+		<dd>
+			<h2><img src="ts3_main.jpg" alt="" /></h2>
+			<p><b>TOY STORY 3</b><br /><a>Check out the new trailer!</a></p>
+			<ul>
+				<li><img src="ts3_1.jpg" alt="" /></li>
+				<li><img src="ts3_1.jpg" alt="" /></li>
+				<li><img src="ts3_1.jpg" alt="" /></li>
+				<li><img src="ts3_1.jpg" alt="" /></li>
+			</ul>
+		</dd>
+	</dl>
+ </body>
+</html>
