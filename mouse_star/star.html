@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <!-- 제이쿼리 설치  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script>
+	$(document).ready(function(){
+		var x = 1; //초기값 현재위치
+		var y = 1;
+		var x2 = 1; //초기값 현재위치
+		var y2 = 1;
+		$(window).mousemove(function(e){
+			mouseX = e.pageX; //현재 마우스의 X좌표
+			mouseY = e.pageY; //현재 마우스의 Y좌표
+		});
+
+		setInterval(function(){
+			x = x +0.2 * (mouseX-25 - x);
+			y = y +0.2 * (mouseY-25 - y);
+			x2 = x2 +0.1 * (mouseX-15 - x2);
+			y2 = y2 +0.1 * (mouseY-15 - y2);
+
+			$('div:eq(0)').css({'left':x, 'top':y});
+			$('div:eq(1)').css({'left':x2, 'top':y2});
+		},30);
+	
+	});
+
+  </script>
+  <style>
+	* {margin:0; padding:0; list-style:none;}
+	body {background-color:#000;}
+	div{position:absolute;}
+	div img{ width:100%; }
+	div:nth-child(1) { width:50px; }
+	div:nth-child(2) { width:30px; }
+	
+  </style>
+ </head>
+ <body>
+<div><img src="star.png" alt="" /></div>
+<div><img src="star.png" alt="" /></div>
+ </body>
+</html>

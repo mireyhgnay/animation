@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <!-- 제이쿼리 설치  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+	$(document).ready(function(){
+		$('p').draggable({
+			containment:"#wrap",  //드래그가 가능한 영역을 지정함
+			stop:function(){  //드래그가 끝났을 때 (drop 이랑 의미가 좀 달라서 다르게 쓰임)
+				$('#wrap').css('background-color','#ccccff'); //드래그 끝났을 때 배경색이 바뀜 , 배경색 말고도 뭐든 적용할 수 있음.
+			}
+		});
+
+		$('li').droppable({ //li에 하트가 떨어졌을 때 
+			drop:function(){
+				
+				$(this).css('background-color','#6699ff').html('<h1>love</h1>');
+				$(this).siblings().css('background-color','#00ccff').html('box');
+				
+				
+			}
+		});
+
+	});
+
+  </script>
+  <style>
+	* {margin:0; padding:0; list-style:none;}
+	#wrap { width:900px; height:500px; background-color:#ffccff; border:20px solid #000; position:relative; margin:auto; }
+	#wrap p { position:absolute; width:50px; z-index:99;}
+	#wrap p img { width:100%; }
+	#wrap ul {position:absolute; bottom:0; text-align:center; }
+	li { width:150px; height:150px; display:inline-block; background-color:#00ccff; border:5px solid #000; margin:5px; }
+  </style>
+ </head>s
+ <body>
+	<div id="wrap">
+		<p><img src="love.png" alt="" /></p>
+		<ul>
+			<li>box1</li>
+			<li>box2</li>
+			<li>box3</li>
+			<li>box4</li>
+			<li>box5</li>
+		</ul>
+	</div>
+ </body>
+</html>

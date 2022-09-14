@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>mosemove Ex</title>
+  <!-- 제이쿼리 설치  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script>
+	$(document).ready(function(){
+		num = 1;
+
+		$(window).mousemove(function(e){
+			//num = num +1; //1씩 계속 증가
+			//$('div').css('left',num);  //왼쪽으로 
+			mouseX = e.pageX-50; //pageX 는 마우스의 위치를 알려주는 메소드
+			mouseY = e.pageY-50;
+			$('h1:eq(0)').html('mouseX: ' + mouseX); 
+			$('h1:eq(1)').html('mouseY: ' + mouseY);
+
+			$('div').css({'left':mouseX, 'top':mouseY});
+		});
+	});
+
+  </script>
+  <style>
+	* {margin:0; padding:0; list-style:none;}
+	div {width:100px; height:100px; background-color:red; position:absolute;  }
+  </style>
+ </head>
+ <body>
+	<h1></h1>
+	<h1></h1>
+	<div></div>
+ </body>
+</html>
