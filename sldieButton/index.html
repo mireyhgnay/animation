@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+
+ <!-- 제이쿼리 설치 -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+$(document).ready(function(){
+	var numleft = 0; //slide left 0
+//  1=0 2=-1000 3=-2000 4=-3000 5=-4000 6=-5000 7=-6000 !!!! 
+	
+	$('#bt_right').click(function(){
+		if (numleft<=-1628) //7번 위치 (1번그림)
+		{
+			$('#slide').css('left',0) //css를 7번그림위치로 
+			numleft=0; //해당 변수도 초기화 (1번위치)
+		}
+		numleft = numleft-814; 
+		$('#slide').animate({'left':numleft},1000);
+	});
+
+	$('#bt_left').click(function(){
+		if (numleft>=0) //1번 위치 (1번그림)
+		{
+			$('#slide').css('left',-1628) //css를 7번그림위치로 
+			numleft=-1628; //해당 변수도 초기화 (1번위치)
+		}
+		numleft = numleft+814; 
+		$('#slide').animate({'left':numleft},1000);
+	});
+});
+
+  </script>
+
+  <style type="text/css">
+* { margin:0; padding:0; }
+#wrap { width:814px; height:59px; border:1px solid #000;margin:50px auto;overflow:hidden; position:relative;}
+#slide { width:2442px; position:absolute; left:0; }
+
+#slide img { width:814px; height:59px;float:left;}
+
+#bt_left { position:absolute;left:0; width:50px; height:59px; background-color:red;cursor:pointer;} 
+
+#bt_right { position:absolute;right:0;width:50px; height:59px;background-color:red; cursor:pointer; } 
+
+  </style>
+  
+
+ </head>
+ <body>
+	<div id="wrap">
+		<div id="slide">
+			<img src="aa1.png" alt="" /><img src="aa2.png" alt="" /><img src="aa1.png" alt="" />
+		</div>
+
+		<div id="bt_left">왼</div>
+		<div id="bt_right">오</div>
+	</div>
+
+ </body>
+</html>
