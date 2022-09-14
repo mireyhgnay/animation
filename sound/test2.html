@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <!-- 제이쿼리 설치  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="jquery-animate-css-rotate-scale.js"></script>
+  <script>
+	$(document).ready(function(){
+		$('div').mouseover(function(){
+			$('div').animate({rotate:'20deg'},500);
+			$('div').animate({rotate:'-10deg'},500);
+			$('div').animate({rotate:'0deg'},500);
+		});
+	});
+
+  </script>
+  <style>
+	* {margin:0; padding:0; list-style:none;}
+	div {width:50px; height:400px; background-color:#000; position:absolute; left:0; right:0; top:100px; margin:auto; transform-origin:25px 0px;}
+  </style>
+ </head>
+ <body>
+	<div></div>
+ </body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <!-- 제이쿼리 설치  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="jquery-animate-css-rotate-scale.js"></script>
+  <script>
+	$(document).ready(function(){
+		$('#box li').mouseover(function(){
+			$(this).animate({rotate:'10deg'},1000);
+			$(this).animate({rotate:'-6deg'},1000);
+			$(this).animate({rotate:'0deg'},1000);
+			
+			var s = $(this).index()+1;
+			$('#box li').html('<audio src="sound' +s+ '.wav" autoplay></audio>'); 
+
+			
+			});
+			
+			
+			
+			setInterval(function(){
+				//var random = Math.round(Math.random()*20);
+				
+				$('#ran li:nth-child(1)').css('height',Math.random()*30);
+				$('#ran li:nth-child(2)').css('height',Math.random()*20);
+				$('#ran li:nth-child(3)').css('height',Math.random()*40);
+				$('#ran li:nth-child(4)').css('height',Math.random()*15);
+			},100); //인터벌 시간이 30/1000초 라는 것은 자연스런 1초에 33이상의 프레임수를 뜻하는 속도
+		
+	});
+
+  </script>
+  <style>
+	* {margin:0; padding:0; list-style:none;}
+	#box {width:400px; height:400px; margin:auto; position:relative;}
+	#box li {width:50px; height:400px; background-color:#000; position:absolute; transform-origin:25px 0;}
+	#box li:nth-child(1) {left:0;}
+	#box li:nth-child(2) {left:100px;}
+	#box li:nth-child(3) {left:200px;}
+	#box li:nth-child(4) {left:300px;}
+	#box li:nth-child(5) {left:400px;}
+	
+	#line { width:360px; height:200px; position:relative; margin:auto; }
+	#line li { width:1px; height:300px; background-color:#000; position:absolute; }
+	#line li:nth-child(1) {left:0;}
+	#line li:nth-child(2) {left:100px;}
+	#line li:nth-child(3) {left:200px;}
+	#line li:nth-child(4) {left:300px;}
+	#line li:nth-child(5) {left:400px;}
+
+	#player {width:500px; height:200px; text-align:center; margin:auto; position:relative; top:150px; }
+	#player p { font-size:30px; padding:80px; }
+	#ran {width:50px; height:50px; position:absolute; bottom:80px; right:90px;}
+	#ran li {width:6px; height:30px; background-color:#000; position:absolute; bottom:5px}
+	#ran li:nth-child(1) {left:0;}
+	#ran li:nth-child(2) {left:10px;}
+	#ran li:nth-child(3) {left:20px;}
+	#ran li:nth-child(4) {left:30px;}
+  </style>
+ </head>
+ <body>
+ <div><audio src="audio1.mp3" autoplay></audio></div>
+ <div id="piano">
+	 <ul id="line">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+	</ul>
+	<ul id="box">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+
+<div id="player">
+	<p>MUSIC PLAYER</p>
+	<ul id="ran">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+
+ </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <!-- 제이쿼리 설치  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script>
+	$(document).ready(function(){
+		//button에 마우스를 올려놓았을 때 소리나게 하는 거
+		$('button').mouseover(function (){
+			//text : 텍스트를 삽입 
+			//html : 태그를 삽입(기존요소를 다 지우고 삽입) - body에 뭐가있던간에 상관업이 다 지워지고 제이쿼리html만 적용됨.
+			//append : 태그를 삽입(기존요소를 유지하고 추가)
+			$('#sound').html('<audio src="sound1.wav" autoplay></audio>') //태그자체가 다 들어옴
+		});
+	
+	});
+
+  </script>
+  <style>
+	* {margin:0; padding:0; list-style:none;}
+	button {width:100px; height:50px;}
+  </style>
+ </head>
+ <body>
+	<div id="sound">
+		<audio src="sound1.wav" ></audio>
+	</div>
+	<button>click</button>
+ </body>
+</html>
